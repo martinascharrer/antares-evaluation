@@ -23,6 +23,12 @@
             <div class="mb-4">
                {{ $t('message.closeTab') }}
             </div>
+            <base-autocomplete-input
+               clearable
+               has-dropdown
+               :fetcher="() => ['one', 'two', 'three']"
+               @dropDownOpened="() => console.log('have fun')"
+            />
          </div>
          <div class="column col-16">
             <div class="mb-4">
@@ -52,8 +58,10 @@
 </template>
 
 <script>
+import BaseAutocompleteInput from './BaseAutocompleteInput';
 export default {
    name: 'WorkspaceTabQueryEmptyState',
+   components: { BaseAutocompleteInput },
    props: {
       customizations: Object
    }

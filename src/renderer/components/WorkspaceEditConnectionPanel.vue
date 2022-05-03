@@ -43,6 +43,10 @@
                               class="form-input"
                               type="text"
                            >
+                           <base-input
+                              v-model="localConnection.name"
+                              clearable
+                           />
                         </div>
                      </div>
                      <div class="form-group columns">
@@ -396,10 +400,12 @@ import customizations from 'common/customizations';
 import Connection from '@/ipc-api/Connection';
 import ModalAskCredentials from '@/components/ModalAskCredentials';
 import BaseUploadInput from '@/components/BaseUploadInput';
+import BaseInput from './BaseInput';
 
 export default {
    name: 'WorkspaceEditConnectionPanel',
    components: {
+      BaseInput,
       ModalAskCredentials,
       BaseUploadInput
    },

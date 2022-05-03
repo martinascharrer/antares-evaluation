@@ -33,6 +33,11 @@
                <div class="d-flex" :title="$t('word.schema')">
                   <i class="mdi mdi-18px mdi-database mr-1" /><b>{{ schema }}</b>
                </div>
+               <base-autocomplete-input
+                  has-dropdown
+                  :fetcher="() => ['one', 'two', 'three']"
+                  @dropDownOpened="() => console.log('have fun')"
+               />
             </div>
          </div>
       </div>
@@ -147,10 +152,12 @@ import BaseLoader from '@/components/BaseLoader';
 import QueryEditor from '@/components/QueryEditor';
 import WorkspaceTabPropsSchedulerTimingModal from '@/components/WorkspaceTabPropsSchedulerTimingModal';
 import Schedulers from '@/ipc-api/Schedulers';
+import BaseAutocompleteInput from './BaseAutocompleteInput';
 
 export default {
    name: 'WorkspaceTabNewScheduler',
    components: {
+      BaseAutocompleteInput,
       BaseLoader,
       QueryEditor,
       WorkspaceTabPropsSchedulerTimingModal

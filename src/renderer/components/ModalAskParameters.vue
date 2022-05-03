@@ -31,6 +31,11 @@
                            class="form-input"
                            type="text"
                         >
+                        <base-input
+                           v-model="parameter.type"
+                           clearable
+                           has-dropdown
+                        />
                         <span
                            :title="`${parameter.type} ${parameter.length}`"
                            class="input-group-addon field-type cut-text"
@@ -50,10 +55,12 @@
 <script>
 import { NUMBER, FLOAT } from 'common/fieldTypes';
 import ConfirmModal from '@/components/BaseConfirmModal';
+import BaseInput from './BaseInput';
 
 export default {
    name: 'ModalAskParameters',
    components: {
+      BaseInput,
       ConfirmModal
    },
    filters: {

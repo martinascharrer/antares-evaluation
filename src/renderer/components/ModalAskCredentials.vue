@@ -24,6 +24,11 @@
                            class="form-input"
                            type="text"
                         >
+                        <base-input
+                           v-model="credentials.user"
+                           clearable
+                           @inputCleared="closeModal"
+                        />
                      </div>
                   </div>
                   <div class="form-group">
@@ -54,8 +59,11 @@
 </template>
 
 <script>
+import BaseInput from './BaseInput';
+
 export default {
    name: 'ModalAskCredentials',
+   components: { BaseInput },
    data () {
       return {
          credentials: {

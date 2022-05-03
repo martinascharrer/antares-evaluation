@@ -111,6 +111,12 @@
          @close-context="closeMiscFolderContext"
          @reload="refresh"
       />
+      <base-autocomplete-input
+         clearable
+         has-dropdown
+         :fetcher="() => ['one', 'two', 'three']"
+         @dropDownOpened="() => console.log('have fun')"
+      />
    </div>
 </template>
 
@@ -128,10 +134,12 @@ import TableContext from '@/components/WorkspaceExploreBarTableContext';
 import MiscContext from '@/components/WorkspaceExploreBarMiscContext';
 import MiscFolderContext from '@/components/WorkspaceExploreBarMiscFolderContext';
 import ModalNewSchema from '@/components/ModalNewSchema';
+import BaseAutocompleteInput from './BaseAutocompleteInput';
 
 export default {
    name: 'WorkspaceExploreBar',
    components: {
+      BaseAutocompleteInput,
       WorkspaceExploreBarSchema,
       DatabaseContext,
       TableContext,
@@ -618,7 +626,7 @@ export default {
     .workspace-explorebar-body {
       width: 100%;
       height: calc((100vh - 58px) - #{$excluding-size});
-      overflow: overlay;
+      overflow: hidden;
       padding: 0 0.1rem;
     }
   }

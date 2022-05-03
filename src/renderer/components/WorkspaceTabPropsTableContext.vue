@@ -18,6 +18,12 @@
             </div>
          </div>
       </div>
+      <base-input
+         max-length="20"
+         label="test"
+         :disabled="hasPrimary"
+         has-dropdown
+      />
       <div v-if="indexes.length" class="context-element">
          <span class="d-flex"><i class="mdi mdi-18px mdi-key-arrow-right text-light pr-1" /> {{ $t('message.addToIndex') }}</span>
          <i class="mdi mdi-18px mdi-chevron-right text-light pl-1" />
@@ -44,10 +50,12 @@
 
 <script>
 import BaseContextMenu from '@/components/BaseContextMenu';
+import BaseInput from './BaseInput';
 
 export default {
    name: 'WorkspaceTabQueryTableContext',
    components: {
+      BaseInput,
       BaseContextMenu
    },
    props: {

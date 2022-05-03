@@ -24,7 +24,12 @@
                </button>
 
                <div class="divider-vert py-3" />
-
+               <base-input
+                  label="props fct"
+                  clearable
+                  has-dropdown
+                  @inputCleared="() => console.log('hi')"
+               />
                <button
                   class="btn btn-dark btn-sm"
                   :disabled="isChanged"
@@ -229,10 +234,12 @@ import QueryEditor from '@/components/QueryEditor';
 import WorkspaceTabPropsFunctionParamsModal from '@/components/WorkspaceTabPropsFunctionParamsModal';
 import ModalAskParameters from '@/components/ModalAskParameters';
 import Functions from '@/ipc-api/Functions';
+import BaseInput from './BaseInput';
 
 export default {
    name: 'WorkspaceTabPropsFunction',
    components: {
+      BaseInput,
       BaseLoader,
       QueryEditor,
       WorkspaceTabPropsFunctionParamsModal,

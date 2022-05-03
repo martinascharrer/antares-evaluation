@@ -5,6 +5,13 @@
          class="editor"
          :style="{height: `${height}px`}"
       />
+      <base-autocomplete-input
+         :disabled="false"
+         clearable
+         has-dropdown
+         :fetcher="() => ['one', 'two', 'three']"
+         @inputCleared="() => console.log('have fun')"
+      />
    </div>
 </template>
 
@@ -14,9 +21,11 @@ import 'ace-builds/webpack-resolver';
 import '../libs/ext-language_tools';
 import { mapGetters, mapActions } from 'vuex';
 import Tables from '@/ipc-api/Tables';
+import BaseAutocompleteInput from './BaseAutocompleteInput';
 
 export default {
    name: 'QueryEditor',
+   components: { BaseAutocompleteInput },
    props: {
       value: String,
       workspace: Object,

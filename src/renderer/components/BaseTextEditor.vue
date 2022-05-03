@@ -23,6 +23,7 @@ export default {
       autoFocus: { type: Boolean, default: false },
       readOnly: { type: Boolean, default: false },
       showLineNumbers: { type: Boolean, default: true },
+      isClosable: { type: Boolean, default: true },
       height: { type: Number, default: 200 }
    },
    data () {

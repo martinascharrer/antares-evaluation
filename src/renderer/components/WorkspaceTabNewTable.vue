@@ -187,7 +187,11 @@ export default {
       connection: Object,
       tab: Object,
       isSelected: Boolean,
-      schema: String
+      schema: String,
+      disabled: {
+         type: Boolean,
+         default: false
+      }
    },
    data () {
       return {

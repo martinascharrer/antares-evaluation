@@ -37,6 +37,7 @@
             >
                {{ cancelText || $t('word.cancel') }}
             </button>
+            <slot name="actions" />
          </div>
       </div>
    </div>
@@ -56,7 +57,11 @@ export default {
          default: false
       },
       confirmText: String,
-      cancelText: String
+      cancelText: String,
+      disabled: {
+         type: Boolean,
+         default: false
+      }
    },
    computed: {
       hasHeader () {

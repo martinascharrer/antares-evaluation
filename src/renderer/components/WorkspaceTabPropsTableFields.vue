@@ -145,7 +145,11 @@ export default {
       connUid: String,
       table: String,
       schema: String,
-      mode: String
+      mode: String,
+      isClosable: {
+         type: Boolean,
+         default: false
+      }
    },
    data () {
       return {
@@ -183,6 +187,7 @@ export default {
    watch: {
       fieldsLength () {
          this.refreshScroller();
+         this.$emit('fieldsLengthChanged');
       }
    },
    updated () {

@@ -1,6 +1,7 @@
 <template>
    <div>
       <label class="empty">
+         <slot name="start" />
          <input
             :disabled="disabled"
             class="loading loading-lg"
@@ -12,6 +13,7 @@
          <li>item 2</li>
          <li>item 3</li>
       </ul>
+      <slot name="end" />
    </div>
 </template>
 

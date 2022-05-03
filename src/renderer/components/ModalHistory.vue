@@ -106,7 +106,11 @@ export default {
       BaseVirtualScroll
    },
    props: {
-      connection: Object
+      connection: Object,
+      disabled: {
+         type: Boolean,
+         default: false
+      }
    },
    data () {
       return {
@@ -170,6 +174,7 @@ export default {
          navigator.clipboard.writeText(sql);
       },
       deleteQuery (query) {
+         this.$emit('queryDeleted');
          this.deleteQueryFromHistory({
             workspace: this.connection.uid,
             ...query

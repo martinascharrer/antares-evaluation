@@ -53,7 +53,7 @@ import BaseContextMenu from '@/components/BaseContextMenu';
 import BaseInput from './BaseInput';
 
 export default {
-   name: 'WorkspaceTabQueryTableContext',
+   name: 'WorkspaceTabPropsTableContext',
    components: {
       BaseInput,
       BaseContextMenu

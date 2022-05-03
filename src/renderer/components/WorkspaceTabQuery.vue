@@ -195,7 +195,7 @@ import BaseLoader from '@/components/BaseLoader';
 import WorkspaceTabQueryTable from '@/components/WorkspaceTabQueryTable';
 import WorkspaceTabQueryEmptyState from '@/components/WorkspaceTabQueryEmptyState';
 import ModalHistory from '@/components/ModalHistory';
-import tableTabs from '@/mixins/tableTabs';
+import tableTabs from '../mixins/tableTabs';
 
 export default {
    name: 'WorkspaceTabQuery',

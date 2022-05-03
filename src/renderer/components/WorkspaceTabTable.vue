@@ -183,7 +183,7 @@ import WorkspaceTabTableFilters from '@/components/WorkspaceTabTableFilters';
 import ModalNewTableRow from '@/components/ModalNewTableRow';
 import ModalFakerRows from '@/components/ModalFakerRows';
 import { mapGetters, mapActions } from 'vuex';
-import tableTabs from '@/mixins/tableTabs';
+import tableTabs from '../mixins/tableTabs';
 
 export default {
    name: 'WorkspaceTabTable',
